@@ -1,1 +1,1 @@
-Bu Next.Js da qilingan Netlifix clone versiyasi
+Bu Next.Js da qiliingan Netlifix clone versiyasi
