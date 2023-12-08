@@ -1,2 +1,3 @@
 Bu Next.Js da qiliingan Netlifix clone versiyasi
-Next env ni qo'shdek.
+Next env ni qo'shdek
+Sherzod
