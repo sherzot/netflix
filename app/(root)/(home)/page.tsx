@@ -2,8 +2,8 @@
 import { redirect } from 'next/navigation';
 
 const Page = () => {
-    
-    return redirect('/app/(root)/browse')
+
+    return redirect('/browse')
 };
 
 export default Page;

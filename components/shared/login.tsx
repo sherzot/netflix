@@ -1,8 +1,8 @@
-// @flow strict
+"use client"
 
 import * as React from 'react';
 
-function Login() {
+const Login = () => {
     return (
         <div>
             Login Component
