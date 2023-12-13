@@ -1,13 +1,13 @@
 import { createContext } from "react";
-import { ContextType } from "@/types";
+import { ChildProps, ContextType } from "@/types";
 
 export const Context = createContext<ContextType | null>(null);
 
-const GlobalContext = () => {
+const GlobalContext = ({children} : ChildProps) => {
     return(
-        <div>
-
-        </div>
+        <Context.Provider value={null}>
+            {children}
+        </Context.Provider>
     );
 }
 
