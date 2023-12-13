@@ -1,10 +1,9 @@
-"use client"
 
 import { redirect } from 'next/navigation';
-import * as React from 'react';
 
 const Page = () => {
-    return redirect('/browse')
+    
+    return redirect('/app/(root)/browse')
 };
 
 export default Page;

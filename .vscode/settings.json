@@ -3,5 +3,8 @@
     "markdown.updateLinksOnFileMove.include": [
         "**/*.{md,mkd,mdwn,mdown,markdown,markdn,mdtxt,mdtext,workbook}"
     ],
-    "tabnine.receiveBetaChannelUpdates": true
+    "tabnine.receiveBetaChannelUpdates": true,
+    "cSpell.words": [
+        "browse"
+    ]
 }

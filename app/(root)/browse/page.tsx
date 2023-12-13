@@ -5,11 +5,12 @@ import { useGlobalContext } from '@/context';
 import Login from '@/components/ui/shared/login';
 
 const Page = ()=>  {
-    const {account} = useGlobalContext();
+   const {account} = useGlobalContext();
     if (account === null) return <Login/>
+
     return (
         <div>
-            Browse Page
+            <h1>Browse Page</h1>
         </div>
     );
 };
