@@ -10,7 +10,7 @@ const authOptions: NextAuthOptions = {
     ],
     callbacks: {
         async session({session, tokken}: any){
-            session.user.username = session?.user?.username.split(" ").join("").toLowerCase();
+            session.user.username = session?.user?.name?.split(" ").join("").toLowerCase();
             session.user.uid = tokken.sub;
             return session;
         }
