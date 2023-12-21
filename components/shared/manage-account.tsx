@@ -5,7 +5,6 @@ import { MdDataObject } from "react-icons/md";
 import { Trash2 } from 'lucide-react';
 import { PiLockKeyFill } from "react-icons/pi";
 import { MdAccountCircle } from "react-icons/md";
-import { Image } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 
 function ManageAccount() {
@@ -38,13 +37,13 @@ function ManageAccount() {
                     </li>
                     {/* ADD ACCOUNT */}
                     <li className='border bg-[#e5b109] font-bold text-xl border-black max-w-[200px] rounded min-w-[84px] max-h-[200px] min-h-[84px] w-[155px] h-[155px] cursor-pointer flex justfiy-center items-center'>
-                        <span className='font-mon font-bold text-xl'>Add account<br/></span>
+                        <span className='font-mon font-bold text-xl'>Add account</span>
                         <MdAccountCircle/>
                     </li>
                 </ul>
                 
                 <Button 
-                onClick={()  => setIsDelete(prev => !prev)}
+                onClick={() => setIsDelete(prev => !prev)}
                 className='bg-transparent rounded-none hover::bg-transparent !text-white font font-bold border border-gray-100 cursor-pointer tracking-wide inline-flex text-sm px-[1.5em] py-[0.5em]'>
                      Manage Profiles
                 </Button>
