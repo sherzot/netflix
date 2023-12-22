@@ -6,11 +6,12 @@ import { Trash2 } from 'lucide-react';
 import { PiLockKeyFill } from "react-icons/pi";
 import { MdAccountCircle } from "react-icons/md";
 import { Button } from '@/components/ui/button';
+import { Dialog, DialogContent } from "@/components/ui/dialog";
 
 function ManageAccount() {
 
     const [isDelete, setIsDelete] = React.useState<boolean>(false)
-
+    const [open, setOpen] = React.useState(false)
     return (
         
         <div className={"min-h-screen flex justify-center flex-col items-center relative"}>
@@ -48,6 +49,11 @@ function ManageAccount() {
                      Manage Profiles
                 </Button>
             </div>
+            <Dialog open={open} onOpenChange={setOpen}>
+                <DialogContent>
+                    Modal
+                </DialogContent>
+            </Dialog>
         </div>
     );
 };

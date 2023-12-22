@@ -11,8 +11,8 @@ const Page = ()=>  {
    const {data: session} = useSession()
    console.log(session);
    
-   if (session === null) return <Login/>
    if (account === null) return <ManageAccount/>
+   if (session === null) return <Login/>
 
     return (
         <div>
