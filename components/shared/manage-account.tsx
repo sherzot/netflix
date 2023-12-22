@@ -37,7 +37,9 @@ function ManageAccount() {
                         </div>
                     </li>
                     {/* ADD ACCOUNT */}
-                    <li className='border bg-[#e5b109] font-bold text-xl border-black max-w-[200px] rounded min-w-[84px] max-h-[200px] min-h-[84px] w-[155px] h-[155px] cursor-pointer flex justfiy-center items-center'>
+                    <li 
+                        onClick={() => setOpen(true)}
+                        className='border bg-[#e5b109] font-bold text-xl border-black max-w-[200px] rounded min-w-[84px] max-h-[200px] min-h-[84px] w-[155px] h-[155px] cursor-pointer flex justfiy-center items-center'>
                         <span className='font-mon font-bold text-xl'>Add account</span>
                         <MdAccountCircle/>
                     </li>
