@@ -5,7 +5,7 @@ import * as React from 'react';
 const LoginAccountForm = () =>{
     return (
             <div>
-                LoginAccountForm
+                Login Account Form
             </div>
             
         );
