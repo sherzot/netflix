@@ -3,8 +3,7 @@
 import * as React from 'react';
 import Image  from 'next/image';
 import { Button } from '@/components/ui/button';
-import { AiFillGithub } from "react-icons/ai";
-import { FaApple } from "react-icons/fa";
+import { AiFillGithub } from 'react-icons/ai';
 import { signIn } from 'next-auth/react';
 
 const Login = () => {
@@ -24,13 +23,6 @@ const Login = () => {
                         onClick={() => signIn("github")}
                         >
                         <AiFillGithub className='w-7 h-7'/>
-                        Sign in with GitHub
-                    </Button>
-                    <Button 
-                        className='mt-4 flex items-center gap-2 w-full h-54vh bg-red-600 !text-white hover:bg-red-500'
-                        onClick={() => signIn("apple")}
-                        >
-                        <FaApple className='w-7 h-7'/>
                         Sign in with GitHub
                     </Button>
                 </div>
