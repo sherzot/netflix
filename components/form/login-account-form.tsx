@@ -3,9 +3,12 @@
 import * as React from 'react';
 
 const LoginAccountForm = () =>{
-    return <div>
+    return (
+            <div>
                 LoginAccountForm
-            </div>;
+            </div>
+            
+        );
 };
 
 export default LoginAccountForm;
