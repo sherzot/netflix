@@ -65,7 +65,7 @@ function ManageAccount() {
                 </Button>
             </div>
             <Dialog open={open} onOpenChange={setOpen}>
-                <DialogContent>
+                <DialogContent className='max-w-2xl'>
                     {state === "login" && <LoginAccountForm/>}
                     {state === "create" && <CreateAccountForm/>}
                 </DialogContent>
