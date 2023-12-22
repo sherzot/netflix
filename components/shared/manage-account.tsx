@@ -7,11 +7,13 @@ import { PiLockKeyFill } from "react-icons/pi";
 import { MdAccountCircle } from "react-icons/md";
 import { Button } from '@/components/ui/button';
 import { Dialog, DialogContent } from "@/components/ui/dialog";
-
+import CreateAccountForm  from "@/components/form/create-account-form";
+import LoginAccountForm from "@/components/form/login-account-form";
 function ManageAccount() {
 
     const [isDelete, setIsDelete] = React.useState<boolean>(false)
     const [open, setOpen] = React.useState(false)
+    const [state, setState] = React.useState<"login" | "create">("create")
     return (
         
         <div className={"min-h-screen flex justify-center flex-col items-center relative"}>
@@ -20,7 +22,13 @@ function ManageAccount() {
                 {/* Who`s watching? */}
                 <ul className={"flex p-0 my-12"}>
                     {/* GET ACCOUNT */}
-                    <li className={"max-w-[200px] w-[155ppx] cursor-pointer flex flex-col items-center gap-3 min-w-[200px]"}>
+                    <li 
+                        onClick={() =>{
+                            setOpen(true)
+                            setState("login")
+
+                        }}
+                        className={"max-w-[200px] w-[155ppx] cursor-pointer flex flex-col items-center gap-3 min-w-[200px]"}>
                         <div className='relative'>
                             <div className='border bg-[#e5b109] font-bold text-xl border-black max-w-[200px] rounded min-w-[84px] max-h-[200px] min-h-[84px] w-[155px] h-[155px] cursor-pointer flex justfiy-center items-center'>
                                 <MdDataObject className='w-20 h-20 font justfiy-center'/>
@@ -38,7 +46,10 @@ function ManageAccount() {
                     </li>
                     {/* ADD ACCOUNT */}
                     <li 
-                        onClick={() => setOpen(true)}
+                        onClick={() => {
+                            setOpen(true)
+                            setState("create")
+                        }}
                         className='border bg-[#e5b109] font-bold text-xl border-black max-w-[200px] rounded min-w-[84px] max-h-[200px] min-h-[84px] w-[155px] h-[155px] cursor-pointer flex justfiy-center items-center'>
                         <span className='font-mon font-bold text-xl'>Add account</span>
                         <MdAccountCircle/>
@@ -53,7 +64,8 @@ function ManageAccount() {
             </div>
             <Dialog open={open} onOpenChange={setOpen}>
                 <DialogContent>
-                    Modal
+                    {state === "login" && <LoginAccountForm/>}
+                    {state === "create" && <CreateAccountForm/>}
                 </DialogContent>
             </Dialog>
         </div>
