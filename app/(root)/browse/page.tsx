@@ -9,7 +9,7 @@ import ManageAccount from '@/components/shared/manage-account';
 const Page = ()=>  {
    const {account} = useGlobalContext();
    const {data: session} = useSession()
-   console.log(session);
+//    console.log(session);
    
    if (account === null) return <ManageAccount/>
    if (session === null) return <Login/>
