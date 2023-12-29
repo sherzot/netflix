@@ -1,5 +1,4 @@
 
-
 import { connectDatabase } from "@/lib/mongoose";
 import { NextResponse } from "next/server";
 
