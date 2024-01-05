@@ -19,5 +19,5 @@ export interface AxiosResponse{
  message?: string
 }
 export interface AccountResponse extends AxiosResponse{
-    data?: AccountProps[]
+    data: AccountProps[]
 }

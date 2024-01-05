@@ -10,7 +10,6 @@ export const dynamic = "force-dynamic";
 export async function POST(req: Request){
     try{
         await connectDatabase();
-
         const {name, pin, uid}  = await req.json();
         const isExist = await Account.findOne({name});
         const allAccounts = await Account.find({uid})
