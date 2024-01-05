@@ -9,6 +9,11 @@ import { Button } from '@/components/ui/button';
 import { Dialog, DialogContent } from "@/components/ui/dialog";
 import CreateAccountForm  from "@/components/form/create-account-form";
 import LoginAccountForm from "@/components/form/login-account-form";
+import { Account } from 'next-auth';
+import { AccountProps } from '@/types';
+import axios from 'axios';
+import { useEffect } from 'react';
+import {AccountResponse} from '@/types';
 
 
 function ManageAccount() {
@@ -16,6 +21,19 @@ function ManageAccount() {
     const [isDelete, setIsDelete] = React.useState<boolean>(false)
     const [open, setOpen] = React.useState(false)
     const [state, setState] = React.useState<"login" | "create">("create")
+    const [account, setAccount] = React.useState<AccountProps[]>([])
+
+    useEffect(() => {
+        const getAllAccounts = async () => {
+            try {
+                const { data } = await axios.get<AccountResponse>("/api/accounts");
+                data.success && setAccount(data)
+            }catch (e){
+
+            }
+        }
+    }, [])
+
     return (
         
         <div className={"min-h-screen flex justify-center flex-col items-center relative"}>
