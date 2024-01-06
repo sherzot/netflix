@@ -10,7 +10,7 @@ import * as z from "zod";
 import {zodResolver} from "@hookform/resolvers/zod"
 import axios from 'axios';
 import { AccountResponse } from '@/types';
-import { toast } from '../ui/use-toast';
+import { toast } from '@/components/ui/use-toast';
 
 
 interface Props{
@@ -27,18 +27,18 @@ const CreateAccountForm = ({ uid, setOpen}: Props) => {
     try {
       const { data } = await axios.post<AccountResponse>("/api/createAccount", {...values, uid});
       if(data.success) {
-        setOpen(false);
-        form.reset();
+        setOpen(false)
+        form.reset()
         return toast({
           title: "Account created successfully",
-          description: "Your account has been created successfully"
+          description: "Your account has been created successfully",
         });
       }
     } catch (e) {
       return toast({
         title: "Error",
         description: "An error occurred while creating your account",
-        variant: "destructive"
+        variant: "destructive",
       })
     }
   }

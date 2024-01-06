@@ -33,7 +33,7 @@ function ManageAccount() {
     useEffect(() => {
       const getAllAccounts = async () => {
         try {
-          const { data } = await axios.get<AccountResponse>(`/api/account?uid=${session.user.uid}`);
+          const { data } = await axios.get<AccountResponse>(`/api/account?uid=${session?.user?.uid}`);
           console.log(data);
           data.success && setAccounts(data.data);
         } catch (e) {
@@ -114,7 +114,7 @@ function ManageAccount() {
         <Dialog open={open} onOpenChange={setOpen}>
           <DialogContent>
             {state === "login" && <LoginAccountForm />}
-            {state === "create" && <CreateAccountForm uid={session?.user?.uid} setOpen={setOpen}/>}
+            {state === "create" && <CreateAccountForm uid={session?.user?.uid} setOpen={setOpen} />}
           </DialogContent>
         </Dialog>
       </div>
