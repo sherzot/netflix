@@ -1,4 +1,5 @@
 // @flow strict
+"use client";
 
 import { Loader, Loader2 } from 'lucide-react';
 import * as React from 'react';

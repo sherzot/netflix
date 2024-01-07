@@ -1,6 +1,6 @@
 /* eslint-disable react-hooks/exhaustive-deps */
 // @flow strict
-
+"use client"
 import * as React from 'react';
 import { MdDataObject } from "react-icons/md";
 import { Trash2 } from 'lucide-react';

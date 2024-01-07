@@ -1,3 +1,5 @@
+"use client"
+
 import NextAuth, { NextAuthOptions } from "next-auth";
 import GithubProvider from "next-auth/providers/github";
 

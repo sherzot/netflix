@@ -1,3 +1,4 @@
+"use client"
 
 import { connectDatabase } from "@/lib/mongoose";
 import { NextResponse } from "next/server";
@@ -13,9 +14,7 @@ export async function POST(req: Request){
         const {name, pin, uid}  = await req.json();
         const isExist = await Account.findOne({name});
         const allAccounts = await Account.find({uid})
-        console.log(isExist);
-        console.log(allAccounts);
-        console.log(allAccounts.length);
+
 
         if(isExist){
             return NextResponse.json({success: false, message: "You already have an account"});
@@ -25,7 +24,7 @@ export async function POST(req: Request){
 
         const hashPin = await hash(pin, 10);
 
-        const account = await Account.create({name,pin: hashPin,uid});
+        const account = await Account.create({name,pin: hashPin, uid});
 
         return NextResponse.json({success: true, data: account})
     }
