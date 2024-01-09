@@ -1,7 +1,7 @@
 // @flow strict
 "use client";
 
-import { Loader, Loader2 } from 'lucide-react';
+import { Loader2 } from 'lucide-react';
 import * as React from 'react';
 import PinInput from 'react-pin-input';
 
@@ -14,7 +14,7 @@ const LoginAccountForm = () =>{
     setIsLoading(true);
     console.log(value);
     
-  };
+  }
 
     return (
       <>
