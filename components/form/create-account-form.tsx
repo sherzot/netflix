@@ -1,4 +1,3 @@
-"use client"
 import { createAccountSchema } from '@/lib/validation';
 import * as React from 'react';
 import {useForm} from 'react-hook-form';
