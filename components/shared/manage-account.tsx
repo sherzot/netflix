@@ -27,7 +27,7 @@ function ManageAccount() {
     const [state, setState] = React.useState<"login" | "create">("create")
     const [accounts, setAccounts] = React.useState<AccountProps[]>([])
     const {data: session}: any = useSession() 
-    console.log(session);
+    // console.log(session);
     
 
     useEffect(() => {
