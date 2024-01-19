@@ -1,0 +1,9 @@
+{
+  "markdown.updateLinksOnFileMove.enabled": "always",
+  "markdown.updateLinksOnFileMove.include": [
+    "**/*.{md,mkd,mdwn,mdown,markdown,markdn,mdtxt,mdtext,workbook}"
+  ],
+  "tabnine.receiveBetaChannelUpdates": true,
+  "cSpell.words": ["browse"],
+  "compile-hero.disable-compile-files-on-did-save-code": true
+}
