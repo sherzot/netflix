@@ -8,15 +8,16 @@ import PinInput from 'react-pin-input';
 import * as z from "zod";
 import {zodResolver} from "@hookform/resolvers/zod"
 import axios from 'axios';
-import { AccountResponse } from '@/types';
+import { AccountProps, AccountResponse } from '@/types';
 import { toast } from '@/components/ui/use-toast';
+import { any } from 'zod';
 
 
 interface Props{
   uid: string;
   setOpen: React.Dispatch<React.SetStateAction<boolean>>
 }
-const CreateAccountForm = ({ uid, setOpen}: Props) => {
+const CreateAccountForm = ({ uid, setOpen }: Props) => {
   const form = useForm<z.infer<typeof createAccountSchema>>({
     resolver: zodResolver(createAccountSchema),
     defaultValues: { name: "", pin: "" },
@@ -24,13 +25,23 @@ const CreateAccountForm = ({ uid, setOpen}: Props) => {
   const { isSubmitting } = form.formState;
   async function onSubmit(values: z.infer<typeof createAccountSchema>) {
     try {
-      const { data } = await axios.post<AccountResponse>("/api/createAccount", {...values, uid});
-      if(data.success) {
-        setOpen(false)
-        form.reset()
+      const { data } = await axios.post<AccountResponse>("/api/account", {
+        ...values,
+        uid,
+      });
+      if (data.success) {
+        setOpen(false);
+        form.reset();
+        console.log(data);
         return toast({
           title: "Account created successfully",
           description: "Your account has been created successfully",
+        });
+      } else {
+        return toast({
+          title: "Error",
+          description: data.message,
+          variant: "destructive",
         });
       }
     } catch (e) {
@@ -38,7 +49,7 @@ const CreateAccountForm = ({ uid, setOpen}: Props) => {
         title: "Error",
         description: "An error occurred while creating your account",
         variant: "destructive",
-      })
+      });
     }
   }
   return (
@@ -121,3 +132,7 @@ const CreateAccountForm = ({ uid, setOpen}: Props) => {
 };
 
 export default CreateAccountForm;
+
+function setAccounts(arg0: any[]) {
+  throw new Error('Function not implemented.');
+}
