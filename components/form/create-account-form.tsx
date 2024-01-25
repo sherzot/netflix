@@ -1,21 +1,28 @@
-import { createAccountSchema } from '@/lib/validation';
-import * as React from 'react';
-import {useForm} from 'react-hook-form';
-import {Form, FormControl, FormDescription, FormField, FormItem, FormLabel, FormMessage} from '@/components/ui/form';
+import { createAccountSchema } from "@/lib/validation";
+import * as React from "react";
+import { useForm } from "react-hook-form";
+import {
+  Form,
+  FormControl,
+  FormDescription,
+  FormField,
+  FormItem,
+  FormLabel,
+  FormMessage,
+} from "@/components/ui/form";
 import { Input } from "@/components/ui/input";
-import { Button } from '../ui/button';
-import PinInput from 'react-pin-input';
+import { Button } from "../ui/button";
+import PinInput from "react-pin-input";
 import * as z from "zod";
-import {zodResolver} from "@hookform/resolvers/zod"
-import axios from 'axios';
-import { AccountProps, AccountResponse } from '@/types';
-import { toast } from '@/components/ui/use-toast';
-import { any } from 'zod';
+import { zodResolver } from "@hookform/resolvers/zod";
+import axios from "axios";
+import { AccountProps, AccountResponse } from "@/types";
+import { toast } from "@/components/ui/use-toast";
+import { any } from "zod";
 
-
-interface Props{
+interface Props {
   uid: string;
-  setOpen: React.Dispatch<React.SetStateAction<boolean>>
+  setOpen: React.Dispatch<React.SetStateAction<boolean>>;
 }
 const CreateAccountForm = ({ uid, setOpen }: Props) => {
   const form = useForm<z.infer<typeof createAccountSchema>>({
@@ -134,5 +141,5 @@ const CreateAccountForm = ({ uid, setOpen }: Props) => {
 export default CreateAccountForm;
 
 function setAccounts(arg0: any[]) {
-  throw new Error('Function not implemented.');
+  throw new Error("Function not implemented.");
 }
