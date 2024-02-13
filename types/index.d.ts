@@ -1,5 +1,6 @@
-import { Dispatch, ReactNode, SetStateAction } from "react";
 
+"use client";
+import { Dispatch, ReactNode, SetStateAction } from "react";
 export interface ContextType {
   account: AccountProps | null;
   setAccount: Dispatch<SetStateAction<AccountProps | null>>;

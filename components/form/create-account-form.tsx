@@ -1,6 +1,10 @@
-import { createAccountSchema } from "@/lib/validation";
-import * as React from "react";
+"use client";
+
+import React, { Dispatch, SetStateAction } from "react";
 import { useForm } from "react-hook-form";
+import * as z from "zod";
+import { createAccountSchema } from "@/lib/validation";
+import { zodResolver } from "@hookform/resolvers/zod";
 import {
   Form,
   FormControl,
@@ -11,18 +15,17 @@ import {
   FormMessage,
 } from "@/components/ui/form";
 import { Input } from "@/components/ui/input";
-import { Button } from "../ui/button";
+import { Button } from "@/components/ui/button";
 import PinInput from "react-pin-input";
-import * as z from "zod";
-import { zodResolver } from "@hookform/resolvers/zod";
 import axios from "axios";
 import { AccountProps, AccountResponse } from "@/types";
 import { toast } from "@/components/ui/use-toast";
-import { any } from "zod";
 
 interface Props {
   uid: string;
-  setOpen: React.Dispatch<React.SetStateAction<boolean>>;
+  setOpen: Dispatch<SetStateAction<boolean>>;
+  setAccounts: Dispatch<SetStateAction<AccountProps[]>>;
+  accounts: AccountProps[];
 }
 const CreateAccountForm = ({ uid, setOpen }: Props) => {
   const form = useForm<z.infer<typeof createAccountSchema>>({
