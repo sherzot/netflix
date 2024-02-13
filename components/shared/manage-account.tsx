@@ -13,6 +13,7 @@ import { AccountProps, AccountResponse } from "@/types";
 import axios from "axios";
 import { useSession } from "next-auth/react";
 import { toast } from "@/components/ui/use-toast";
+import PiLockKeyFill from "lucide-react"
 
 const ManageAccount = () => {
   const [isDelete, setIsDelete] = useState<boolean>(false);
@@ -90,7 +91,7 @@ const ManageAccount = () => {
                 <span className="font-mon font-bold text-xl">
                   {account.name}
                 </span>
-                <PiLockKeyFill className={"w-6 h-6 text-black-300"} />
+                {/* <PiLockKeyFill className={"w-6 h-6 text-black-300"} /> */}
               </div>
             </li>
           ))}
@@ -116,9 +117,6 @@ const ManageAccount = () => {
       </div>
       <Dialog open={open} onOpenChange={setOpen}>
         <DialogContent>
-          {state === "login" && (
-            <LoginAccountForm currentAccount={currentAccount} />
-          )}
           {state === "create" && (
             <CreateAccountForm
               uid={session?.user?.uid}
