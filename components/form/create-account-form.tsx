@@ -105,8 +105,8 @@ const CreateAccountForm = ({ uid, setOpen }: Props) => {
                     disabled={isSubmitting}
                     secretDelay={100}
                     onChange={(value) => field.onChange(value)}
-                    type="numeric"
-                    inputMode="number"
+                    type={"numeric"}
+                    inputMode={"number"}
                     style={{
                       display: "grid",
                       gridTemplateColumns: "repeat(4, 1fr)",
